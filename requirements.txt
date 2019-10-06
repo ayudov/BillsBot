@@ -1,3 +1,7 @@
 pyTelegramBotApi
 gunicorn
 flask
+gspread
+oauth2client
+pyparsing
+pprint
