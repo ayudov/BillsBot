@@ -23,11 +23,9 @@ def send_welcome(message):
 @bot.message_handler(content_types=["text"]) #Любой текст
 def any_text(message: Message):
     text = parse_string(message.text)
-
-    bot.send_message(message.chat.id, str(pformat(cgs.get_cells_values())))
     cgs.write_in_sheet(text)
-
-
+    # bot.send_message(message.chat.id, str(text))
+    bot.send_message(message.chat.id, str(pformat(cgs.get_cells_values())))
 
     # bot.send_message(message.chat.id, str(cgs.get_number_of_rows()))
     # bot.send_message(message.chat.id, str(cgs.COMMENT_COL))
